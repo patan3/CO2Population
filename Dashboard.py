@@ -24,10 +24,11 @@ st.sidebar.markdown(" # About the Author ")
 st.sidebar.markdown("Angelo Patane'  \n angelpatane9@gmail.com")
 st.sidebar.markdown("[Linkedin](https://www.linkedin.com/in/angelopatane/)    \n [Twitter](https://twitter.com/angel_patane3)")
 
+@st.cache
+def load_data():
+    return pd.read_csv(r'https://raw.githubusercontent.com/patan3/CO2Population/master/df_final.csv', index_col = 0), pd.read_csv(r'https://raw.githubusercontent.com/patan3/CO2Population/master/df_merge.csv', index_col = 0)
 
-df_final = pd.read_csv(r'C:\Users\Utente\Desktop\MODERN DATA ANALYTICS\Dashboard\df_final.csv', index_col = 0)
-df_merge = pd.read_csv(r'C:\Users\Utente\Desktop\MODERN DATA ANALYTICS\Dashboard\df_merge.csv', index_col = 0)
-
+df_final, df_merge = load_data()
 # %%
 st.header('0. Introduction')
 st.markdown("The variables 'CO2 Emissions' and 'Population' are indices. The reference value is 100. The reference year is 1990 for all the countries.")
